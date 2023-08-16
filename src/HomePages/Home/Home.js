@@ -91,14 +91,14 @@ export default function Home() {
     noteEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  useEffect(() => {    //all when group is update to push new group in array
+  useEffect(() => {    // -------- ----------- -------  call when group is update to push new group in array
 
     if (groups !== '') {
       localStorage.setItem('notePocketGroups', JSON.stringify(groups))
     }
   }, [groups])
 
-  useEffect(() => {      // call when note is update to save new note in array
+  useEffect(() => {      //  ------- ---------- -----  call when note is update to save new note in array
 
     activeGroup && localStorage.setItem(activeGroup[0].groupname, JSON.stringify(notes));
 
@@ -107,7 +107,7 @@ export default function Home() {
 
 
 
-  useEffect(() => {     //for fetch the data of groups
+  useEffect(() => {     //  ------- --------- ------- for fetch the data of groups
     let notePocketGroups = JSON.parse(localStorage.getItem('notePocketGroups'));
 
     if (notePocketGroups !== null) {
